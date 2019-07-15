@@ -1,0 +1,25 @@
+{
+  "name": "datastructures",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iancl/datastructures.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iancl/datastructures/issues"
+  },
+  "homepage": "https://github.com/iancl/datastructures#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^24.8.0",
+    "sinon": "^7.3.2"
+  }
+}
