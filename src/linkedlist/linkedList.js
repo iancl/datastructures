@@ -1,20 +1,20 @@
 /**
  * This is a simple LinkedList implementation for javacript
+ *
  * API:
  * - clear()
- * - forEach() √
- * - getAt() √
- * - getFirst() √
- * - getLast() √
- * - insertAt() √
- * - insertFirst() √
- * - insertLast() √
- * - removeFirst() √
- * - removeLast() √
- * - removeAt() √
- * - size() √
+ * - forEach()
+ * - getAt()
+ * - getFirst()
+ * - getLast()
+ * - insertAt()
+ * - insertFirst()
+ * - insertLast()
+ * - removeFirst()
+ * - removeLast()
+ * - removeAt()
+ * - size()
  */
-
  const Node = require('./node');
 
 class LinkedList {
@@ -46,7 +46,6 @@ class LinkedList {
 
   /**
    * Returns a node at the nth position. Returns null of there are no nodes
-   *
    * @param {int} index
    * @returns {Node}
    */
@@ -74,7 +73,6 @@ class LinkedList {
 
   /**
    * returns the first node on the list or null if there's no nodes
-   *
    * @returns {Node} first node on the list
    */
   getFirst() {
@@ -82,11 +80,9 @@ class LinkedList {
   }
 
   /**
-   * returns the last node on the list or null if there's no nodes
-   *
-   * @returns {Node} first node on the list
+   * Implementation of getLast without using other linkedList methods
    */
-  getLast() {
+  getLastRaw() {
     let current = this.head;
 
     while (current && current.next) {
@@ -96,8 +92,11 @@ class LinkedList {
     return current;
   }
 
-  // same as above but using this.size()
-  getLastRaw() {
+  /**
+   * returns the last node on the list or null if there's no nodes
+   * @returns {Node} first node on the list
+   */
+  getLast() {
     return this.getAt(this.size() - 1);
   }
 
@@ -124,7 +123,6 @@ class LinkedList {
   /**
    * inserts a node at the nth position
    * if index is out of bounds, then it inserts at the end
-   *
    * @param {int} index
    * @param {any} data
    */
@@ -143,7 +141,6 @@ class LinkedList {
 
   /**
    * insertAt implementation without the use of other LinkedList methods
-   *
    * @param {int} index
    * @param {any} data
    */
@@ -177,7 +174,6 @@ class LinkedList {
 
   /**
    * Inserts a node at the begginning of the list
-   *
    * @param {any} data
    */
   insertFirst(data) {
@@ -209,7 +205,6 @@ class LinkedList {
   /**
    * Removes a node at the nth index
    * Makes use of other class methods
-   *
    * @param {int} index
    */
   removeAt(index) {
@@ -231,7 +226,6 @@ class LinkedList {
   /**
    * this is a removeAt implementation without the use of other linked list
    * methods
-   *
    * @param {int} index
    */
   removeAtRaw(index) {
