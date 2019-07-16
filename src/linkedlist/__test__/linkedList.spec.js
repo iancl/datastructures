@@ -432,4 +432,30 @@ describe('getAt()', () => {
     });
   });
 
+  describe('midpoint()', () => {
+    test('should return null if there\'s no head', () => {
+      expect(linkedList.midpoint()).toBeNull()
+    });
+
+    test('should return mid item if list.size() is odd number', () => {
+      let length = 9;
+
+      for (let i = 0; i < length; i++) {
+        linkedList.insertLast(i + 1)
+      }
+
+      expect(linkedList.midpoint().data).toEqual(5);
+    });
+
+    test('should return last node of first half if list.size() is even number', () => {
+      let length = 10;
+
+      for (let i = 0; i < length; i++) {
+        linkedList.insertLast(`foo${i + 1}`)
+      }
+
+      expect(linkedList.midpoint().data).toEqual(`foo5`);
+    });
+  });
+
 });

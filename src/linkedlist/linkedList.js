@@ -10,6 +10,7 @@
  * - insertAt()
  * - insertFirst()
  * - insertLast()
+ * - midpoint()
  * - removeFirst()
  * - removeLast()
  * - removeAt()
@@ -200,6 +201,30 @@ class LinkedList {
     }
 
     last.next = new Node(data);
+  }
+
+  /**
+   * returns the middle node of the listl
+   * if list.size() is odd then get the element in the middle
+   * else if list.size() is even then get the last element of the first half
+   * @returns {Node}
+   */
+  midpoint() {
+
+    if (!this.head) {
+      return null;
+    }
+    // slow will move 1 item per iteration
+    let slow = this.head;
+    // fast will move 2 items per iteration
+    let fast = this.head;
+
+    while (fast && fast.next && fast.next.next) {
+      slow = slow.next;
+      fast = fast.next.next;
+    }
+
+    return slow;
   }
 
   /**
